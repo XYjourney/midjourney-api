@@ -5,7 +5,7 @@ import chalk from "chalk"
 
 client.init().then(() => {
   const app = express()
-  const port = 3000
+  const port = 8888
 
   app.use(express.json())
 
@@ -13,7 +13,7 @@ client.init().then(() => {
     res.send('Hello World!')
   })
 
-  app.post('/imagine', (req, res) => {
+  app.post('/api/imagine', (req, res) => {
     const prompt = req.body.prompt
     if (!prompt) {
       res.json({ error: "prompt is required" })
